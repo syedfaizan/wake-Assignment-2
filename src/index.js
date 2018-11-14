@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import * as serviceWorker from './serviceWorker';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEnvelope, faKey, faCircle } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faEnvelope, faKey, faCircle);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

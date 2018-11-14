@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Login from './containers/login/Login';
+import Dashboard from './containers/dashboard/Dashboard';
 
-const Dashboard = () => (
-  <div>
-    Dashboard
-  </div>
-)
+
 
 const MainMenu = () => {
   return (
