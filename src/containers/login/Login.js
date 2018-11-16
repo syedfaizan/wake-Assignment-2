@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import request from '../../utils/request';
 import "./Login.css";
 
 export default class Login extends Component {
@@ -28,13 +28,24 @@ export default class Login extends Component {
 
   authenticate = (event) => {
     event.preventDefault();
-    axios.get('/credentials.json')
+    let user = {};
+    user.email = this.state.email;
+    user.password = this.state.password;
+    request.get('/users', { params: user})
       .then( response => {
-        let creds = response.data;
-
-        if( creds.email === this.state.email && creds.password === this.state.password ){
-          this.props.history.push('/dashboard');
+        if(response.data && response.data.length){
+          let creds = response.data && response.data[0];
+          if( creds.email === this.state.email && creds.password === this.state.password && creds.isAdmin ){
+            this.props.history.push('/dashboard');
+            localStorage.setItem('user', JSON.stringify(creds));
+        }} else {
+          alert("Credentials are wrong!")
         }
+      })
+      .catch( err=>{
+        alert("Error occured, try again");
+        console.error(err);
+
       })
   }
 
@@ -42,7 +53,7 @@ export default class Login extends Component {
     return (
       <div className="container">
         <div className="card card-container">
-            <img id="profile-img" className="profile-img-card" alt="profile avatar" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"/>
+            <img id="profile-img" className="img-thumbnail" alt="profile avatar" src="wakecap.png"/>
             <p id="profile-name" className="profile-name-card"></p>
             <form className="form-signin" onSubmit={this.authenticate.bind(this)}>
                 <input type="email" id="email" className="form-control" placeholder="Email address" required autoFocus onChange={this.handleChange.bind(this)}></input>

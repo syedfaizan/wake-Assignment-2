@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body, .bodyWrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .left {
+            width: 200px;
+            height: 100%;
+            border-right: 1px solid grey;
+            float: left;
+        }
+
+        .logoWrapper {
+            height: 100px;
+        }
+
+        .logo__text {
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+            line-height: 50px;
+        }
+
+        .leftPanel__list {
+            list-style: none;
+            height: calc(100% - 160px);
+        }
+
+        .leftPane__item {
+            line-height: 50px;
+            padding-left: 25px;
+        }
+
+        .leftPane__item:hover {
+            background: #94AEC1;
+            cursor: pointer;
+        }
+
+        .leftPane__item.active {
+            background: #7E9BB0;
+            font-weight: bold;
+        }
+
+        .emergencyButtonWrapper {
+            text-align: center;
+        }
+
+        .emergencyButton {
+            height: 35px;
+            padding: 5px 15px;
+            background: white;
+            outline: 0;
+            border: 1px solid #89a5b9;
+        }
+
+        .right {
+            width: calc(100% - 200px);
+            height: 100%;
+            float: right;
+        }
+
+        .header {
+            height: 70px;
+            border-bottom: 1px solid grey;
+            text-align: center;
+        }
+
+        .overview {
+            width: 150px;
+            height: 100%;
+            float: left;
+            text-align: center;
+        }
+
+        .overview__workers {
+            line-height: 40px;
+            text-transform: uppercase;
+        }
+
+        .overview__overview {
+            line-height: 15px;
+            font-size: 25px;
+        }
+
+        .selectSite {
+            display: inline-block;
+            margin-top: 25px;
+        }
+
+        .username {
+            float: right;
+            margin-right: 15px;
+        }
+
+        .username__photo {
+            width: 50px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .username__username {
+            line-height: 70px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .body {
+            height: calc(100% - 70px);
+            width: 100%;
+        }
+
+        .workers {
+            height: 100%;
+            width: 35%;
+            float: left;
+            border-right: 1px solid grey;
+        }
+
+        .workers_list {
+            list-style: none;
+        }
+
+        .worker__item {
+            height: 50px;
+        }
+
+        .worker__photo {
+            width: 30px;
+            height: 30px;
+            background: black;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 10px 10px;
+        }
+
+        .worker__details {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .worker__name {
+            font-size: 15px;
+            margin-top: 8px;
+        }
+
+        .worker__description {
+            font-size: 13px;
+        }
+
+        .search__wrapper {
+            height: 55px;
+        }
+
+        .search__box {
+            height: 25px;
+            margin: 15px;
+            width: calc(100% - 30px);
+        }
+
+        .workers_list {
+            height: calc(100% - 125px);
+        }
+
+        .worker__number {
+            display: inline-block;
+            font-size: 12px;
+            float: right;
+            margin-top: 17px;
+            margin-right: 8px;
+        }
+
+        .pagination {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .worker {
+            height: 100%;
+            width: 65%;
+            float: right;
+        }
+
+        .top {
+            height: 33%;
+            border-bottom: 1px solid grey;
+        }
+
+        .middle {
+            height: 33%;
+            border-bottom: 1px solid grey;
+        }
+
+        .bottom {
+            height: 34%;
+        }
+    </style>
+</head>
+<body>
+<div class="bodyWrapper">
+    <div class="left">
+        <div class="logoWrapper">
+            <a href="#"><img/></a>
+            <span class="logo__text">wakecap</span>
+        </div>
+        <ul class="leftPanel__list">
+            <li class="leftPane__item">Dashboard</li>
+            <li class="leftPane__item active">Workers</li>
+            <li class="leftPane__item">Zones</li>
+            <li class="leftPane__item">Assign Helmets</li>
+            <li class="leftPane__item">Reports</li>
+            <li class="leftPane__item">Manage Site</li>
+            <li class="leftPane__item">Settings</li>
+        </ul>
+
+        <div class="emergencyButtonWrapper">
+            <button class="emergencyButton">EMERGENCY</button>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="header">
+            <div class="overview">
+                <div class="overview__workers">Workers</div>
+                <div class="overview__overview">Overview</div>
+            </div>
+
+            <div class="selectSite">
+                <select class="selectSiteDropdown">
+                    <option disabled selected>Select site</option>
+                    <option>A</option>
+                    <option>B</option>
+                </select>
+            </div>
+
+            <div class="username">
+                <span class="username__photo"></span>
+                <span class="username__username">username</span>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="workers">
+                <div class="search__wrapper">
+                    <input class="search__box"/>
+                </div>
+
+                <ul class="workers_list">
+                    <li class="worker__item">
+                        <span class="worker__photo"></span>
+                        <div class="worker__details">
+                            <div class="worker__name">Worker Name</div>
+                            <div class="worker__description">Description</div>
+                        </div>
+                        <div class="worker__number">
+                            Number
+                        </div>
+                    </li>
+
+                    <li class="worker__item">
+                        <span class="worker__photo"></span>
+                        <div class="worker__details">
+                            <div class="worker__name">Worker Name</div>
+                            <div class="worker__description">Description</div>
+                        </div>
+                        <div class="worker__number">
+                            Number
+                        </div>
+                    </li>
+
+                    <li class="worker__item">
+                        <span class="worker__photo"></span>
+                        <div class="worker__details">
+                            <div class="worker__name">Worker Name</div>
+                            <div class="worker__description">Description</div>
+                        </div>
+                        <div class="worker__number">
+                            Number
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="pagination">
+                    <span>Prev</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>Next</span>
+                </div>
+            </div>
+
+            <div class="worker">
+                <div class="top">
+
+                </div>
+
+                <div class="middle">
+
+                </div>
+
+                <div class="bottom">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

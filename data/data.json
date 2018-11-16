@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Syed Faizan",
+      "email": "syedfaizan2008@gmail.com",
+      "password": "Faizan123",
+      "isAdmin": "true",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/constantx/128.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Syed Usmaan",
+      "email": "syedusmaan@gmail.com",
+      "isSupervisor": true,
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/salvafc/128.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Tabrez",
+      "email": "tabrez@gmail.com",
+      "isSupervisor": true,
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marrimo/128.jpg"
+    }
+  ],
+  "workers": [
+    {
+      "id": 1,
+      "name": "Gary Fisher",
+      "userId": 2,
+      "assetId": "6666",
+      "tagId": "4578",
+      "designation": "Site Manager",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/m4rio/128.jpg",
+      "totalHours": 3455,
+      "lastSeen": "Zone 1"
+    },
+    {
+      "id": 2,
+      "name": "Henry Allen",
+      "userId": 2,
+      "assetId": "8888",
+      "tagId": "542",
+      "designation": "Construction worker",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/creartinc/128.jpg",
+      "totalHours": 2450,
+      "lastSeen": "Zone 1"
+    },
+    {
+      "id": 3,
+      "name": "Harry Potter",
+      "userId": 3,
+      "assetId": "9999",
+      "tagId": "2444",
+      "designation": "Engineer",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/alecarpentier/128.jpg",
+      "totalHours": 234,
+      "lastSeen": "Zone 1"
+    },
+    {
+      "id": 4,
+      "name": "Wilson fisk",
+      "userId": 3,
+      "assetId": "3456",
+      "tagId": "478787",
+      "designation": "Construction worker",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bagawarman/128.jpg",
+      "totalHours": 7756,
+      "lastSeen": "Zone 1"
+    }
+  ],
+  "timeSheet": [
+    {
+      "id": 1,
+      "workerId": 1,
+      "date": "16-11-2018"
+    }
+  ],
+  "helmets": [
+    {
+      "workerId": 2,
+      "identifier": "34456",
+      "lastUsed": "5-11-2018",
+      "id": 1
+    },
+    {
+      "workerId": 1,
+      "identifier": "4444",
+      "lastUsed": "26-10-2018",
+      "id": 2
+    },
+    {
+      "workerId": 3,
+      "identifier": "5555",
+      "lastUsed": "2-11-2018",
+      "id": 3
+    },
+    {
+      "workerId": 3,
+      "identifier": "6667",
+      "lastUsed": "4-11-2018",
+      "id": 5
+    },
+    {
+      "workerId": 4,
+      "identifier": "6666",
+      "lastUsed": "8-11-2018",
+      "id": 4
+    }
+  ]
+}

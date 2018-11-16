@@ -1,30 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './containers/login/Login';
 import Dashboard from './containers/dashboard/Dashboard';
 
-
-
-const MainMenu = () => {
-  return (
-    <div>
-      <Link to="/">
-        <button>home</button>
-      </Link>
-      <Link to="/dashboard">
-        <button>Dashboard</button>
-      </Link>
-    </div>
-  );
-};
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <MainMenu/>
+        <div className="bodyWrapper">
           <Route exact path="/" component={Login} />
           <Route exact path="/dashboard" component={Dashboard} />
         </div>
